@@ -1,0 +1,7 @@
+development:
+  :address:  'smtp.gmail.com'
+  :port:  587
+  :user_name:  'jhamm.business'
+  :password:  'mywifeisneely'
+  :authentication:  'plain'
+  :enable_starttls_auto:  true
