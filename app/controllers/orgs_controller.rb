@@ -1,4 +1,5 @@
 class OrgsController < ApplicationController
+  include OrgsHelper
   # GET /orgs
   # GET /orgs.json
   def index
@@ -66,24 +67,9 @@ class OrgsController < ApplicationController
   def organizations
     party_id = params[:party_id].to_i
     ranks = getRanks(party_id)
-    ranks.each do |rank|
-      contact(rank)
-    end
+    contact_by_rank(ranks)
     respond_to do |format|
       format.json { head :no_content }
-    end
-  end
-
-  def getRanks(party_id)
-    org = Org.where(:party_id => party_id)
-    ranks = org.first.ranks.order("rank")
-  end
-
-  def contact(rank)
-    if(rank.contact_type_cd == "cell")
-      OrgMailer.send_sms(rank.org.contact.cell).deliver
-    else
-      puts rank.contact_type_cd
     end
   end
 end
