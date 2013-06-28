@@ -31,11 +31,6 @@ class OrgsController < ApplicationController
     end
   end
 
-  # GET /orgs/1/edit
-  def edit
-    @org = Org.find(params[:id])
-  end
-
   # POST /orgs
   # POST /orgs.json
   def create
@@ -68,28 +63,27 @@ class OrgsController < ApplicationController
     end
   end
 
-  # DELETE /orgs/1
-  # DELETE /orgs/1.json
-  def destroy
-    @org = Org.find(params[:id])
-    @org.destroy
-
+  def organizations
+    party_id = params[:party_id].to_i
+    ranks = getRanks(party_id)
+    ranks.each do |rank|
+      contact(rank)
+    end
     respond_to do |format|
-      format.html { redirect_to orgs_url }
       format.json { head :no_content }
     end
   end
 
-  def organizations
-    party_id = params[:party_id].to_i
+  def getRanks(party_id)
     org = Org.where(:party_id => party_id)
     ranks = org.first.ranks.order("rank")
-    ranks.each do |rank|
+  end
+
+  def contact(rank)
+    if(rank.contact_type_cd == "cell")
+      OrgMailer.send_sms(rank.org.contact.cell).deliver
+    else
       puts rank.contact_type_cd
-    end
-    OrgMailer.send_email.deliver
-    respond_to do |format|
-      format.json { head :no_content }
     end
   end
 end
