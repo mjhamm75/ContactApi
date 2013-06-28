@@ -1,23 +1,143 @@
-<h1>Listing orgs</h1>
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Notifi.u</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap.icon-large.min.css" rel="stylesheet">
+</head>
+<body>
 
-<table>
-  <tr>
-    <th>Party</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <div class='container'><!--Header-->
 
-<% @orgs.each do |org| %>
-  <tr>
-    <td><%= org.party_id %></td>
-    <td><%= link_to 'Show', org %></td>
-    <td><%= link_to 'Edit', edit_org_path(org) %></td>
-    <td><%= link_to 'Destroy', org, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <header class='row'>
 
-<br />
+      <div class='span12'>
 
-<%= link_to 'New Org', new_org_path %>
+        <nav class='navbar'>
+          <div class='navbar-inner'>
+            <a class='brand'>Notifi.u</a>
+            <div class='sub-brand nav-header'>We will find you.</div>
+
+            <ul class='nav'>
+
+            </ul>
+          </div>
+        </nav>
+
+      </div>
+
+    </header> <!--End of header-->
+
+
+    <div class='row' id='main-content'><!--Main content of page-->
+
+
+
+
+      <div class="span12"> <!-- begin carousel -->
+        <div id="slider" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class='inner-item'>
+                <img src="http://images2.wikia.nocookie.net/__cb20120331132959/mlp/it/images/3/36/Fluttershy_con_Angel_S01E03.png">
+                <div class="carousel-caption">
+                  <h4>Fluttershy<h4>
+                    <small>Element of kindness</small>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="item">
+                <div class='inner-item'>
+                  <img src="http://images.wikia.com/mlp/images/archive/6/65/20110904114816!Pinkie_Pie_opening_theme.png">
+                  <div class="carousel-caption">
+                    <h4>Pinky Pie<h4>
+                      <small>Element of laughter</small>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="item">
+                  <div class='inner-item'>
+                    <img src="http://images6.fanpop.com/image/photos/33100000/Rainbow-Dash-my-little-pony-friendship-is-magic-rainbow-dash-33122172-803-687.png">
+                    <div class="carousel-caption">
+                      <h4>Rainbow Dash<h4>
+                        <small>Element of loyalty</small>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="item">
+                    <div class='inner-item'>
+                      <img src="http://images3.wikia.nocookie.net/__cb20120403002014/pony/es/images/e/e0/Twilight_sparkle_omg_happy.png">
+                      <div class="carousel-caption">
+                        <h4>Twilight Sparkle<h4>
+                          <small>Element of magic</small>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="item">
+                      <div class='inner-item'><img src="http://images1.wikia.nocookie.net/__cb20120126132706/mlp/de/images/1/11/Applejack_bucking_apples_S1E12.png">
+                        <div class="carousel-caption">
+                          <h4>Applejack<h4>
+                            <small>Element of honesty</small>
+                          </div></div>
+
+                        </div>
+
+                        <div class="item">
+                          <div class='inner-item'><img src="http://images2.wikia.nocookie.net/__cb20130214045442/mlp/images/thumb/d/d3/Rarity_hoping_for_the_best_S1E14.png/800px-Rarity_hoping_for_the_best_S1E14.png">
+                            <div class="carousel-caption">
+                              <h4>Rarity<h4>
+                                <small>Element of generosity</small>
+                              </div></div>
+
+                            </div>
+
+                          </div>
+                          <a class="left carousel-control" href="#slider" data-slide="prev">&lsaquo;</a>
+                          <a class="right carousel-control" href="#slider" data-slide="next">&rsaquo;</a>
+                        </div>
+                      </div><!-- end of carousel -->
+
+                      <div class='span12 row-fluid'> <!--begin of article-->
+                        <div class='span4 well sidebar-nav'>
+                          <ul class='nav nav-list'>
+                            <li class='nav-header'>Why, in the name of Zeus's beard, Ponies?</li>
+                            <li>
+                              <span class='muted'>-We needed something eye-catching, and I was all like "Why not?"</span>
+                            </li>
+                            <li class=''>
+                              <span class='muted'>-Nopony stopped me.</span>
+                            </li>
+
+                             <li class='nav-header'>Why this next section is even here.</li>
+                            <li>
+                              <span class='muted'>-I felt like there wasn't enough content in the sidebar. So I decided to put this
+                                captivating little paragraph here.</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class='span8 well'>
+                          <h2>The Mane Content of the Page</h2>
+                          <p>If you were wondering what the main content of the page was, you're here. Now, why does this page even exist? That's a good question. We all take it for granted that you love our awesome notification service, but "Waaaaaaaaaa!" you may say when you figure out that notifications are useless when you have no place to go. Well, here is that place.</p>
+                          <p>Also, ponies.</p>
+                        </div>
+                      </div><!--end of article-->
+                    </div><!--End of main content of page-->
+                  </div>
+                  <footer class='row'></footer>
+                </div>
+              </body>
+              </html>

@@ -8,6 +8,11 @@ class OrgMailer < ActionMailer::Base
       to += number + provider + ", "
     end
     # mail(to: to, subject: "Testing user mailer", body: "TEST TEST TEST")
-    puts "Messsage attempted for: " + number
+    puts "SMS message attempted for: " + number
+  end
+
+  def send_email(email)
+    mail(to: "jason.hamm@availity.com", subject: "Testing user mailer", body: "Testing Testing Testing")
+    puts "Email message attempted for: " + email
   end
 end

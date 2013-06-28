@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628141048) do
+ActiveRecord::Schema.define(:version => 20130628181545) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "org_id"
@@ -22,19 +22,28 @@ ActiveRecord::Schema.define(:version => 20130628141048) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "messages", :force => true do |t|
+    t.integer  "org_id"
+    t.string   "note"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "orgs", :force => true do |t|
     t.integer  "party_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   create_table "ranks", :force => true do |t|
     t.integer  "org_id"
     t.string   "contact_type_cd"
     t.integer  "rank"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "wait"
+    t.boolean  "flag",            :default => false
   end
 
 end

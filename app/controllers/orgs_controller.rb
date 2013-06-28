@@ -6,6 +6,7 @@ class OrgsController < ApplicationController
     @orgs = Org.all
 
     respond_to do |format|
+      format.html { render html: @orgs }
       format.json { render json: @orgs }
     end
   end
@@ -14,6 +15,9 @@ class OrgsController < ApplicationController
   # GET /orgs/1.json
   def show
     @org = Org.find(params[:id])
+    @org.ranks.each do |rank|
+      rank.update_attribute(:flag, true)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -66,6 +70,9 @@ class OrgsController < ApplicationController
 
   def organizations
     party_id = params[:party_id].to_i
+    message = params[:message]
+    binding.pry
+    Org.where(:party_id => party_id).first.messages.create!(:note => message)
     ranks = getRanks(party_id)
     contact_by_rank(ranks)
     respond_to do |format|
