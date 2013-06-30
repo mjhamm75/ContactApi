@@ -7,12 +7,12 @@ class OrgMailer < ActionMailer::Base
     providers.each do |provider|
       to += number + provider + ", "
     end
-    # mail(to: to, subject: "Testing user mailer", body: "TEST TEST TEST")
+    mail(to: to, subject: "Important message from Availity", body: "Please log in to the Availity portal.")
     puts "SMS message attempted for: " + number
   end
 
   def send_email(email)
-    mail(to: "jason.hamm@availity.com", subject: "Testing user mailer", body: "Testing Testing Testing")
+    mail(to: to, subject: "Important message from Availity", body: "Please log in to the Availity portal.")
     puts "Email message attempted for: " + email
   end
 end

@@ -71,7 +71,6 @@ class OrgsController < ApplicationController
   def organizations
     party_id = params[:party_id].to_i
     message = params[:message]
-    binding.pry
     Org.where(:party_id => party_id).first.messages.create!(:note => message)
     ranks = getRanks(party_id)
     contact_by_rank(ranks)
